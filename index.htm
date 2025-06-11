@@ -1,106 +1,261 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="icon" href="https://img.icons8.com/?size=100&id=44484&format=png&color=000000" type="image/x-icon">
-	<title>Terms of Service</title>
-	<style>
-		* {
-			padding: 0;
-			margin: 0;
-			text-decoration: none;
-			list-style: none;
-			box-sizing: border-box;
-		}
-		body {
-			font-family: "Montserrat", sans-serif;
-			background-color: #f4f4f4;
-			color: #333;
-		}
-		header {
-			background: #0082e6;
-			color: white;
-			padding: 1rem 2rem;
-			text-align: center;
-			position: fixed;
-			top: 0;
-			width: 100%;
-			z-index: 1000;
-		}
-		h1 {
-			margin: 0;
-			font-size: 2rem;
-		}
-		main {
-			padding: 100px 2rem 2rem;
-		}
-		pre {
-			background-color: #fff;
-			border-radius: 8px;
-			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-			padding: 2rem;
-			overflow-x: auto;
-			line-height: 1.6;
-		}
-		pre h2 {
-			font-size: 1.5rem;
-			margin-bottom: 1rem;
-		}
-		pre p {
-			font-size: 1rem;
-			margin-bottom: 1rem;
-			color: #666;
-		}
-		footer {
-			background: #2c3e50;
-			color: white;
-			text-align: center;
-			padding: 1rem;
-			bottom: 0;
-			width: 100%;
-		}
-	</style>
+    <meta charset="utf-8">
+    <title>DevlabsCreation - Terms of Service</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://img.icons8.com/?size=100&id=44484&format=png&color=000000" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* CSS Variables - Consistent with DevlabsCreation design */
+        :root {
+            --primary-color: #667eea; /* A vibrant purple-blue */
+            --secondary-color: #764ba2; /* A deeper purple */
+            --text-color-dark: #2d3748;
+            --text-color-medium: #4a5568;
+            --text-color-light: #718096;
+            --background-light: #f8fafc; /* Light grey background */
+            --background-white: #ffffff; /* White background */
+            --border-color: #e2e8f0;
+            --shadow-light: rgba(0, 0, 0, 0.1);
+            --shadow-medium: rgba(0, 0, 0, 0.2);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color-medium);
+            overflow-x: hidden;
+            padding-top: 80px; /* Space for fixed header */
+            background-color: var(--background-light); /* Light background for the page */
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* New Fixed Header Styling */
+        .terms-header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 0; /* Vertical padding */
+            text-align: center;
+            box-shadow: 0 2px 20px var(--shadow-light);
+            transition: all 0.3s ease;
+        }
+
+        .terms-header h1 {
+            color: var(--primary-color);
+            font-size: 1.7rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            margin: 0; /* Remove default margin */
+            line-height: 1; /* Adjust line height to match padding */
+            padding: 0 20px; /* Horizontal padding */
+        }
+
+        /* Section Styling (main content area) */
+        .section {
+            padding: 5rem 0;
+            background-color: var(--background-light);
+        }
+        
+        /* Terms Content Specific Styling */
+        .terms-content-wrapper { /* Wrapper for the terms content */
+            background-color: var(--background-white);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px var(--shadow-light);
+            padding: 3rem; /* More generous padding */
+            max-width: 900px;
+            margin: 0 auto;
+            line-height: 1.8; /* Improved readability for long text */
+            color: var(--text-color-dark); /* Darker text for main content */
+        }
+
+        .terms-content-wrapper h2 {
+            font-size: 1.8rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color); /* Highlight section titles within terms */
+            font-weight: 700;
+            text-align: left; /* Align headings left */
+        }
+        .terms-content-wrapper h2:first-of-type {
+            margin-top: 0; /* No top margin for the very first h2 */
+        }
+
+        .terms-content-wrapper p {
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            color: var(--text-color-medium); /* Subtler color for regular text */
+            text-align: left; /* Align paragraphs left */
+        }
+
+        .terms-content-wrapper strong {
+            font-weight: 600;
+            color: var(--text-color-dark); /* Stronger bold for emphasis */
+        }
+        .terms-content-wrapper a {
+            color: var(--primary-color);
+            text-decoration: underline;
+            transition: color 0.3s ease;
+        }
+        .terms-content-wrapper a:hover {
+            color: var(--secondary-color);
+        }
+
+        /* Footer - Consistent with previous pages */
+        footer {
+            background: var(--text-color-dark);
+            color: white;
+            text-align: center;
+            padding: 3rem 0;
+            position: relative;
+            width: 100%;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .social-links a:hover {
+            color: var(--primary-color);
+            background: white;
+            transform: translateY(-3px);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .terms-header h1 {
+                font-size: 1.5rem;
+            }
+            .section {
+                padding: 3rem 0;
+            }
+            .terms-content-wrapper {
+                padding: 2rem;
+            }
+            .terms-content-wrapper h2 {
+                font-size: 1.5rem;
+            }
+            .terms-content-wrapper p {
+                font-size: 0.95rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .terms-header h1 {
+                font-size: 1.3rem;
+            }
+            .section {
+                padding: 2rem 0;
+            }
+            .terms-content-wrapper {
+                padding: 1.5rem;
+            }
+            .terms-content-wrapper h2 {
+                font-size: 1.3rem;
+            }
+            .terms-content-wrapper p {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
 </head>
 <body>
-	<header>
-		<h1>Terms of Service</h1>
-	</header>
-	<main>
-		<pre>
-Date effective: May 25, 2025
-Welcome to DevlabsCreation, a free website creation service that uses our own made templates and GitHub for hosting. By using our services, you agree to these Terms of Service.
-1. Definitions
-“Service” refers to anything DevlabsCreation offers you.
-"Template" refers to the pre-made website template used to create your website (these websites are designed by us).
-"Content" refers to any information, text, images, or other materials uploaded to or displayed on your website.
-"User" refers to you
-2. Use of Service
-The service we provide is completely free with no hidden costs.
-DevlabsCreation has the right to discontinue or change our services at any time. You will be able to keep your website files.
-3. Content and Liability
-You are solely responsible for the content that is displayed on your website.
-DevlabsCreation is not responsible for any of the content, including: Accuracy, or validity, copyright or trademark infringement.
-You agree to hold DevlabsCreation harmless from any claims, damages, or expenses that come from the websites content.
-4. Intellectual Property
-The Template and any related property rights remain the property of DevlabsCreation while the service remains active.
-5. GitHub Hosting
-Your website may be hosted on GitHub, a third-party hosting platform.
-You agree to comply with GitHub's Terms of Service and Acceptable Use Policy.
-DevlabsCreation is not liable for any issues or downtime related to GitHub's hosting services.
-6. Disclaimer of Warranty
-The Service is provided on an "as-is" and "as-available" basis.
-7. Limitation of Liability
-DevlabsCreation shall not be liable for any damages.
-8. Governing Law
-These Terms of Service shall be in accordance with the laws of the province of Ontario, Canada.
-9. Changes to Terms of Service
-DevlabsCreation reserves the right to modify or update these Terms of Service at any time without notice.
-By using the Service, you acknowledge that you have read, understood, and agree to be bound by these Terms of Service.
-		</pre>
-	</main>
-	<footer>
-		&copy; 2025 DevlabsCreation. All rights reserved.
-	</footer>
+    <!-- New Fixed Header for Terms of Service -->
+    <header class="terms-header">
+        <h1>Terms of Service</h1>
+    </header>
+
+    <section class="section">
+        <div class="container">
+            <div class="terms-content-wrapper">
+                <p><strong>Date effective:</strong> May 25, 2025</p>
+                <p>Welcome to DevlabsCreation, a free website creation service that uses our own made templates and GitHub for hosting. By using our services, you agree to these Terms of Service.</p>
+
+                <h2>1. Definitions</h2>
+                <p><strong>“Service”</strong> refers to anything DevlabsCreation offers you.</p>
+                <p><strong>"Template"</strong> refers to the pre-made website template used to create your website (these websites are designed by us).</p>
+                <p><strong>"Content"</strong> refers to any information, text, images, or other materials uploaded to or displayed on your website.</p>
+                <p><strong>"User"</strong> refers to you.</p>
+
+                <h2>2. Use of Service</h2>
+                <p>The service we provide is completely free with no hidden costs.</p>
+                <p>DevlabsCreation has the right to discontinue or change our services at any time. You will be able to keep your website files.</p>
+
+                <h2>3. Content and Liability</h2>
+                <p>You are solely responsible for the content that is displayed on your website.</p>
+                <p>DevlabsCreation is not responsible for any of the content, including: Accuracy, or validity, copyright or trademark infringement.</p>
+                <p>You agree to hold DevlabsCreation harmless from any claims, damages, or expenses that come from the website's content.</p>
+
+                <h2>4. Intellectual Property</h2>
+                <p>The Template and any related property rights remain the property of DevlabsCreation while the service remains active.</p>
+
+                <h2>5. GitHub Hosting</h2>
+                <p>Your website may be hosted on GitHub, a third-party hosting platform.</p>
+                <p>You agree to comply with <a href="https://docs.github.com/en/site-policy/github-terms/github-terms-of-service" target="_blank">GitHub's Terms of Service</a> and <a href="https://docs.github.com/en/site-policy/acceptable-use-policies/github-acceptable-use-policies" target="_blank">Acceptable Use Policy</a>.</p>
+                <p>DevlabsCreation is not liable for any issues or downtime related to GitHub's hosting services.</p>
+
+                <h2>6. Disclaimer of Warranty</h2>
+                <p>The Service is provided on an "as-is" and "as-available" basis.</p>
+
+                <h2>7. Limitation of Liability</h2>
+                <p>DevlabsCreation shall not be liable for any damages.</p>
+
+                <h2>8. Governing Law</h2>
+                <p>These Terms of Service shall be in accordance with the laws of the province of Ontario, Canada.</p>
+
+                <h2>9. Changes to Terms of Service</h2>
+                <p>DevlabsCreation reserves the right to modify or update these Terms of Service at any time without notice.</p>
+                <p>By using the Service, you acknowledge that you have read, understood, and agree to be bound by these Terms of Service.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="social-links">
+            <a href="https://linkedin.com/company/devlabscreation" target="_blank" title="Visit our LinkedIn page" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAANAAoxDrAxUMVhPU09BMDFVT1NPTzhZSjJSNVFPTE1ETi4u" target="_blank" title="Submit a form to get a website" aria-label="Get a website form"><i class="fas fa-file-alt"></i></a>
+            <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAANAAoxDrAxUN0xYSkc2WDNFVlg5MjUxNE0xSDFLRTZMSi4u" target="_blank" title="Ask questions" aria-label="Ask questions form"><i class="fas fa-question-circle"></i></a>
+        </div>
+        <div class="container">
+            <p>&copy; 2025 DevlabsCreation. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // No navigation-specific JavaScript needed on this page anymore.
+        // The script remains empty to maintain the structure but removes all previous nav logic.
+    </script>
 </body>
 </html>
